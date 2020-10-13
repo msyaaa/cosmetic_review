@@ -1,24 +1,40 @@
-# README
+# テーブル設計
+## users テーブル
+|      Column       |  Type  |   Options   |
+| ----------------- | ------ | ----------- |
+|      nickname     | string | null: false |
+|      email        | string | null: false |
+|      password     | string | null: false |
+| password_confirmation | string | null: false |
+|     birthday      |  date  | null: false |
+|     introduce     |  text  |
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :posts
+- has_many :likes
 
-Things you may want to cover:
+## posts テーブル
+|     Column     |  Type  |   Options   |
+| -------------- | ------ | ----------- |
+|      name      | string | null: false |
+|   category_id  | integer | null: false |
+|      price     | integer | null: false |
+|   description  |  text   | null: false |
+|   evaluation   |  float  | null: false |
+|    shop_name   | string |
+|      user      | references | null: false, foreign_key: true |
 
-* Ruby version
+### Association
+- has_many :likes, dependent: :destroy
+- belongs_to :user
+- belongs_to_active_hash :category
 
-* System dependencies
+## likes テーブル
+|   Column   |    Type    |   Options   |
+| ---------- | ---------- | ----------- |
+|   user  | references | null: false, foreign_key: true |
+|   post  | references | null: false, foreign_key: true |
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- belongs_to :post
