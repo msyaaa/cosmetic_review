@@ -4,6 +4,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <div class='form-text-wrap'>
+      <label class="form-text">ニックネーム</label>
+    </div>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
