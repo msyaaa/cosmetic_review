@@ -8,6 +8,7 @@
 | password_confirmation | string | null: false |
 |     birthday      |  date  | null: false |
 |     introduce     |  text  |
+|      gender       | integer | null: false |
 
 ### Association
 - has_many :posts

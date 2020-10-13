@@ -13,6 +13,7 @@ class User < ApplicationRecord
     validates :gender
     validates :birthday
   end
-  validates :gender, numericality: { other_than: 1} 
   validates :introduce, length: { maximum: 1000 }
+
+  enum gender: { man: 0, woman: 1, other: 2}
 end
