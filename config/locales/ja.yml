@@ -1,0 +1,8 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+       gender: 性別
+       introduce: 自己紹介
+       birthday: 生年月日 
