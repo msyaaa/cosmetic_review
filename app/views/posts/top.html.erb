@@ -1,0 +1,23 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      タイトル
+    </h2>
+    <p class='service-explain'>
+      説明
+    </p>
+  </div>
+
+  <%# 最新の投稿3件 %>
+  <div class='item-contents'>
+    <h2 class='title'>最新の投稿</h2>
+  </div>
+  <%# 最新の投稿3件 %>
+</div>
+<div class='post-btn'>
+<%= link_to "/posts/new" do %>
+  <span class='purchase-btn-text'>投稿する</span>
+<% end %>
+</div>
