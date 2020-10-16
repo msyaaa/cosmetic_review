@@ -6,3 +6,11 @@ ja:
        gender: 性別
        introduce: 自己紹介
        birthday: 生年月日 
+     post:
+       name: 商品名
+       description: 商品の説明
+       image: 画像
+       shop_name: 購入店
+       evaluation: 商品の評価
+       price: 購入価格
+       category_id: カテゴリー
