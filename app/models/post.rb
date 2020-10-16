@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   with_options presence: true do
     validates :name, length: { maximum: 50 }
-    PRICE_VALIDATION = /\A[0-9]+\z/
+    PRICE_VALIDATION = /\A[0-9]+\z/.freeze
     validates :price, format: { with: PRICE_VALIDATION }
     validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than: 10_000_000 }
     validates :description, length: { maximum: 1000 }

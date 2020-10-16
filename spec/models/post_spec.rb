@@ -65,7 +65,7 @@ RSpec.describe Post, type: :model do
           expect(@post.errors.full_messages).to include('カテゴリーを選択してください')
         end
         it 'evaluationが空では保存できない' do
-          @post.evaluation = ""
+          @post.evaluation = ''
           @post.valid?
           expect(@post.errors.full_messages).to include('商品の評価を選択してください')
         end
