@@ -14,3 +14,6 @@ ja:
        evaluation: 商品の評価
        price: 購入価格
        category_id: カテゴリー
+   time:
+     formats:
+       default: "%Y/%m/%d %H:%M:%S"
