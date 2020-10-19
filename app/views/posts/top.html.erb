@@ -13,7 +13,54 @@
   <%# 最新の投稿3件 %>
   <div class='item-contents'>
     <h2 class='title'>最新の投稿</h2>
+    <ul class="post-lists">
+    <% num = 0 %>
+      <% @posts.each do |post| %>
+      <% num += 1 %>
+      <% if num <= 3 %>
+        <li class='list'>
+          <%#= link_to post_path(post.id) do %>
+          <div class='post-img-content'>
+            <%= image_tag post.image.variant(resize: '150x150'), class: "post-img" %>
+          </div>
+          <div class='post-info'>
+            <span>商品名</span>
+            <h3 class='post-name'>
+              <%= post.name %>
+            </h3>
+            <div class='item-price'>
+              <span><%= post.price %>円<br>(税込み)</span>
+            </div>
+            <div>
+              <span>クチコミ評価</span>
+                <p id="star-rate-<%= post.id %>"></p>
+                <script>
+                  $('#star-rate-<%= post.id %>').raty({
+                    size: 36,
+                    starOff: "<%= asset_path('star-off.png') %>",
+                    starOn: "<%= asset_path('star-on.png') %>",
+                    starHalf: "<%= asset_path('star-half.png') %>",
+                    half: true,
+                    readOnly: true,
+                    score: <%= post.evaluation %>,
+                  });
+                </script>
+                <%= post.evaluation %>
+            </div>
+            <div>
+              <%= post.created_at.strftime("%Y.%m.%d") %>
+            </div>
+            <div>
+              <%= post.user.nickname %>
+            </div>
+          </div>
+          <%# end %>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
+  <%= link_to '投稿一覧', posts_path %>
   <%# 最新の投稿3件 %>
 </div>
 <div class='post-btn'>
