@@ -19,9 +19,9 @@
       <% num += 1 %>
       <% if num <= 3 %>
         <li class='list'>
-          <%#= link_to post_path(post.id) do %>
+          <%= link_to post_path(post.id) do %>
           <div class='post-img-content'>
-            <%= image_tag post.image.variant(resize: '150x150'), class: "post-img" %>
+            <%= image_tag post.image, class: "post-img" %>
           </div>
           <div class='post-info'>
             <span>商品名</span>
@@ -54,7 +54,7 @@
               <%= post.user.nickname %>
             </div>
           </div>
-          <%# end %>
+          <% end %>
         </li>
         <% end %>
       <% end %>

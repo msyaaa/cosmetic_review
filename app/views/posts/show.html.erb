@@ -1,0 +1,115 @@
+<%= render "shared/header" %>
+<div class="post-show">
+  <div class="post-box">
+    <div class='item-img-content'>
+      <%= image_tag @post.image ,class:"item-box-img" %>
+    </div>
+    <h2 class="name">
+      <span>商品名</span>
+      <%= @post.name %>
+    </h2>
+    <div class="item-price-box">
+      <span>購入価格</span>
+      <span class="item-price">
+        ¥ <%= @post.price %>
+      </span>
+      <span class="item-postage">
+        (税込) 送料込み
+      </span>
+    </div>
+
+
+    <div class="item-explain-box">
+      <span>商品説明</span>
+      <span><%= @post.description %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">ニックネーム</th>
+          <td class="detail-value"><%= @post.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @post.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">購入店</th>
+          <td class="detail-value"><%= @post.shop_name %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="option">
+      <span>クチコミ評価</span>
+        <p id="star-rate-<%= @post.id %>"></p>
+        <script>
+          $('#star-rate-<%= @post.id %>').raty({
+            size: 36,
+            starOff: "<%= asset_path('star-off.png') %>",
+            starOn: "<%= asset_path('star-on.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            half: true,
+            readOnly: true,
+            score: <%= @post.evaluation %>,
+          });
+        </script>
+        <%= @post.evaluation %>
+    </div>
+  </div>
+  <% if (user_signed_in?) && (current_user.id == @post.user.id) %>
+    <%= link_to '投稿の編集', method: :get, class: "item-red-btn" %>
+    <p class='or-text'>or</p>
+    <%= link_to '削除',  method: :delete, class:'item-destroy' %>
+  <% end %>
+  <div class="post-btn-contents">
+    <%=link_to 'もどる', posts_path, class:"back-btn" %>
+  </div>
+
+  <div>
+    <span>関連商品のクチコミ</span>
+    <ul class="post-lists">
+    <% @posts.each do |post| %>
+      <% if (@post.category.name == post.category.name) && @post != post %>
+      <li class='list'>
+        <%= link_to post_path(post.id) do %>
+        <div class='post-img-content'>
+          <%= image_tag post.image, class: "post-img" %>
+        </div>
+        <div class='post-info'>
+          <span>商品名</span>
+          <h3 class='post-name'>
+            <%= post.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= post.price %>円<br>(税込み)</span>
+          </div>
+          <div>
+            <span>クチコミ評価</span>
+              <p id="star-rate-<%= post.id %>"></p>
+              <script>
+                $('#star-rate-<%= post.id %>').raty({
+                  size: 36,
+                  starOff: "<%= asset_path('star-off.png') %>",
+                  starOn: "<%= asset_path('star-on.png') %>",
+                  starHalf: "<%= asset_path('star-half.png') %>",
+                  half: true,
+                  readOnly: true,
+                  score: <%= post.evaluation %>,
+                });
+              </script>
+              <%= post.evaluation %>
+          </div>
+          <div>
+            <%= post.created_at.strftime("%Y.%m.%d") %>
+          </div>
+          <div>
+            <%= post.user.nickname %>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+</div>
