@@ -15,7 +15,7 @@ class User < ApplicationRecord
   end
   validates :introduce, length: { maximum: 1000 }
 
-  enum gender: { man: 0, woman: 1, other: 2 }
+  enum gender: { 男性: 0, 女性: 1, その他: 2 }
 
   has_many :posts
 end
