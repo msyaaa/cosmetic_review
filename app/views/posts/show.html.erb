@@ -59,7 +59,7 @@
   <% if (user_signed_in?) && (current_user.id == @post.user.id) %>
     <%= link_to '投稿の編集', edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
     <p class='or-text'>or</p>
-    <%= link_to '削除', post_path(@post.id),method: :delete, class:'item-destroy' %>
+    <%= link_to '削除', post_path(@post.id),method: :delete, data: { confirm: '削除しますか？' }, class:'item-destroy' %>
   <% end %>
   <div class="post-btn-contents">
     <%=link_to 'もどる', posts_path, class:"back-btn" %>
