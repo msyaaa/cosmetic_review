@@ -1,0 +1,32 @@
+<div class="user-show">
+  <div class="user-box">
+    <div class='user-img-content'>
+      <%#= image_tag @user.image ,class:"item-box-img" %>
+    </div>
+    <h2 class="name">
+      <span>ニックネーム</span>
+      <%= @user.nickname %>
+    </h2>
+    <div class="user-gender">
+      <span>性別</span>
+      <%= @user.gender %>
+    </div>
+    <div class="user-birthday">
+      <span>生年月日</span>
+        <%= @user.birthday %>
+    </div>
+
+    <div class="user-explain-box">
+      <span>自己紹介</span>
+      <span><%= @user.introduce %></span>
+    </div>
+  </div>
+  <% if current_user.id == @user.id %>
+    <%#= link_to 'プロフィールの編集', edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
+  <% end %>
+  <div class="post-btn-contents">
+    <%=link_to 'もどる', posts_path, class:"back-btn" %>
+  </div>
+
+  
+</div>
