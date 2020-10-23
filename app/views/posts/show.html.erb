@@ -27,7 +27,7 @@
       <tbody>
         <tr>
           <th class="detail-item">ニックネーム</th>
-          <td class="detail-value"><%= @post.user.nickname %></td>
+          <td class="detail-value"><%= link_to @post.user.nickname, user_path(@post.user.id) %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
@@ -103,7 +103,7 @@
             <%= post.created_at.strftime("%Y.%m.%d") %>
           </div>
           <div>
-            <%= post.user.nickname %>
+            <%= link_to post.user.nickname, user_path(@post.user.id) %>
           </div>
         </div>
         <% end %>
