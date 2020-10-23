@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :index_post, only: [:top, :index, :show]
   def top
-    @posts = Post.order(created_at: :desc)
   end
   def index
-    @posts = Post.order(created_at: :desc)
   end
   def new
     @post = Post.new
@@ -21,16 +21,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    @posts = Post.order(created_at: :desc)
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path
     else
@@ -38,9 +34,25 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy 
+    if @post.destroy
+      redirect_to posts_path
+    else
+      render :show
+    end
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:name, :image, :price, :evaluation, :description, :category_id, :shop_name).merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def index_post
+    @posts = Post.order(created_at: :desc)
   end
 end
