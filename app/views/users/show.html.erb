@@ -13,7 +13,11 @@
     </div>
     <div class="user-birthday">
       <span>生年月日</span>
-        <%= @user.birthday %>
+        <%= @user.birthday.strftime("%Y年%m月%d日") %>
+    </div>
+    <div class="user-age">
+      <span>年齢</span>
+        <%= @age %> 歳
     </div>
 
     <div class="user-explain-box">
