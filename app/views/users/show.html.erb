@@ -1,7 +1,7 @@
 <div class="user-show">
   <div class="user-box">
     <div class='user-img-content'>
-      <%#= image_tag @user.image ,class:"item-box-img" %>
+      <%= image_tag @user.image ,class:"user-box-img" if @user.image.attached? %>
     </div>
     <h2 class="name">
       <span>ニックネーム</span>
