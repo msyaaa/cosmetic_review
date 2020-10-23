@@ -4,5 +4,6 @@ class UsersController < ApplicationController
     birthday = @user.birthday
     date_format = "%Y%m%d"
     @age = (Date.today.strftime(date_format).to_i - birthday.strftime(date_format).to_i) / 10000
+    @posts = @user.posts.order(created_at: :desc)
   end
 end

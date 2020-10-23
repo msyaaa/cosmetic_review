@@ -31,6 +31,51 @@
   <div class="post-btn-contents">
     <%=link_to 'もどる', posts_path, class:"back-btn" %>
   </div>
+  <% if (user_signed_in?) && (current_user.id == @user.id) %>
+    <%= link_to 'プロフィール編集', "#", method: :get, class: "user-red-btn" %>
+  <% end %>
 
-  
+  <%# 投稿一覧 %>
+  <div>
+    <span>投稿したクチコミ一覧</span>
+    <ul class="post-lists">
+    <% @posts.each do |post| %>
+      <li class='list'>
+        <%= link_to post_path(post.id) do %>
+        <div class='post-img-content'>
+          <%= image_tag post.image, class: "post-img" %>
+        </div>
+        <div class='post-info'>
+          <span>商品名</span>
+          <h3 class='post-name'>
+            <%= post.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= post.price %>円<br>(税込み)</span>
+          </div>
+          <div>
+            <span>クチコミ評価</span>
+              <p id="star-rate-<%= post.id %>"></p>
+              <script>
+                $('#star-rate-<%= post.id %>').raty({
+                  size: 36,
+                  starOff: "<%= asset_path('star-off.png') %>",
+                  starOn: "<%= asset_path('star-on.png') %>",
+                  starHalf: "<%= asset_path('star-half.png') %>",
+                  half: true,
+                  readOnly: true,
+                  score: <%= post.evaluation %>,
+                });
+              </script>
+              <%= post.evaluation %>
+          </div>
+          <div>
+            <%= post.created_at.strftime("%Y.%m.%d") %>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
 </div>
