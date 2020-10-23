@@ -1,0 +1,81 @@
+<div class="user-show">
+  <div class="user-box">
+    <div class='user-img-content'>
+      <%= image_tag @user.image ,class:"user-box-img" if @user.image.attached? %>
+    </div>
+    <h2 class="name">
+      <span>ニックネーム</span>
+      <%= @user.nickname %>
+    </h2>
+    <div class="user-gender">
+      <span>性別</span>
+      <%= @user.gender %>
+    </div>
+    <div class="user-birthday">
+      <span>生年月日</span>
+        <%= @user.birthday.strftime("%Y年%m月%d日") %>
+    </div>
+    <div class="user-age">
+      <span>年齢</span>
+        <%= @age %> 歳
+    </div>
+
+    <div class="user-explain-box">
+      <span>自己紹介</span>
+      <span><%= @user.introduce %></span>
+    </div>
+  </div>
+  <% if current_user.id == @user.id %>
+    <%#= link_to 'プロフィールの編集', edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
+  <% end %>
+  <div class="post-btn-contents">
+    <%=link_to 'もどる', posts_path, class:"back-btn" %>
+  </div>
+  <% if (user_signed_in?) && (current_user.id == @user.id) %>
+    <%= link_to 'プロフィール編集', "#", method: :get, class: "user-red-btn" %>
+  <% end %>
+
+  <%# 投稿一覧 %>
+  <div>
+    <span>投稿したクチコミ一覧</span>
+    <ul class="post-lists">
+    <% @posts.each do |post| %>
+      <li class='list'>
+        <%= link_to post_path(post.id) do %>
+        <div class='post-img-content'>
+          <%= image_tag post.image, class: "post-img" %>
+        </div>
+        <div class='post-info'>
+          <span>商品名</span>
+          <h3 class='post-name'>
+            <%= post.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= post.price %>円<br>(税込み)</span>
+          </div>
+          <div>
+            <span>クチコミ評価</span>
+              <p id="star-rate-<%= post.id %>"></p>
+              <script>
+                $('#star-rate-<%= post.id %>').raty({
+                  size: 36,
+                  starOff: "<%= asset_path('star-off.png') %>",
+                  starOn: "<%= asset_path('star-on.png') %>",
+                  starHalf: "<%= asset_path('star-half.png') %>",
+                  half: true,
+                  readOnly: true,
+                  score: <%= post.evaluation %>,
+                });
+              </script>
+              <%= post.evaluation %>
+          </div>
+          <div>
+            <%= post.created_at.strftime("%Y.%m.%d") %>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
