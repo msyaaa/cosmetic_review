@@ -1,4 +1,5 @@
 .item-box-img {
-  width: 40vh;
+  width: 30vw;
   height: 30vh;
+  object-fit: contain;
 }

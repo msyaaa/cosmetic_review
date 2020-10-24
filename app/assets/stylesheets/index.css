@@ -1,4 +1,5 @@
 .post-img {
-  width: 30vh;
+  width: 20vw;
   height: 20vh;
+  object-fit: contain;
 }
