@@ -1,4 +1,21 @@
 <header class='top-page-header'>
+  <%= link_to root_path do %>
+    <i class="fas fa-chess-king"></i>
+  <% end %>
+  <%# 検索バー %>
+  <div class='search-bar-contents'>
+    <%= form_with url: "#", method: :get, class:"search-form", local: true do |form|  %>
+      <%= form.text_field :keyword, placeholder:'キーワードから探す', class:'input-box' %>
+      <div class="search-button">
+        <label id="btn-label">
+          <%= form.submit id:"btn-label", class:"btn-hidden" %>
+          <i class="fas fa-search"></i>
+        </label>
+      </div>
+    <% end %>
+  </div>
+  <%# /検索バー %>
+  <%# ユーザー登録 %>
   <div class='nav'>
     <ul class='lists-right'>
       <% if user_signed_in? %>
@@ -10,4 +27,13 @@
       <% end %>
     </ul>
   </div>
+  <%# /ユーザー登録 %>
+  <%# 投稿ボタン %>
+  <div class='post-btn'>
+    <a href="/posts/new">
+      <i class="fas fa-pencil-alt"></i>
+      <span class='post-btn-text'>投稿する</span>
+    </a>
+  </div>
+  <%# /投稿ボタン %>
 </header>

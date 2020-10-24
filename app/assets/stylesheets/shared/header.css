@@ -1,0 +1,81 @@
+.top-page-header {
+  width: 100vw;
+  padding: 1.5vh 13vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: turquoise;
+}
+/* アイコン */
+.fa-chess-king {
+  font-size: 50px;
+  color: yellow;
+}
+/* /アイコン */
+
+/* 検索バー */
+.search-bar-contents {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.search-form {
+  display: flex;
+  width: 30vw;
+  height: 75%;
+  position: relative;
+}
+
+.input-box {
+  width: 100%;
+  outline: none;
+}
+
+.btn-hidden {
+  display: none;
+}
+
+.fa-search {
+  font-size: 20px;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* --検索バー */
+
+/* ユーザー登録 */
+.lists-right {
+  display: flex;
+}
+.lists-right > li > a {
+  color: black;
+}
+.user-nickname, .login {
+  margin-right: 20px;
+}
+/* --ユーザー登録 */
+
+/* 投稿ボタン */
+.post-btn {
+  display: flex;
+  align-items: center;
+  width: 15%;
+}
+.post-btn > a {
+  width:75%;
+  padding: 10%;
+  background-color: violet;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+}
+.fa-pencil-alt {
+  color: white;
+  margin-right: 5%;
+}
+/* --投稿ボタン */
