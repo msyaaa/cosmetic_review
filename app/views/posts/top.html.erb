@@ -15,6 +15,7 @@
     </div>
   </div>
 
+  <div class="main-contents">
   <%# 最新の投稿3件 %>
   <div class='item-contents'>
     <h2 class='title'>最新の投稿</h2>
@@ -24,39 +25,42 @@
       <% num += 1 %>
       <% if num <= 3 %>
         <li class='list'>
-          <%= link_to post_path(post.id) do %>
+          <%= link_to post_path(post.id), class:"post-link" do %>
           <div class='post-img-content'>
             <%= image_tag post.image, class: "post-img" %>
           </div>
-          <div class='post-info'>
-            <span>商品名</span>
-            <h3 class='post-name'>
-              <%= post.name %>
-            </h3>
-            <div class='item-price'>
-              <span><%= post.price %>円<br>(税込み)</span>
+          <div class="post-info-contents">
+            <div class='post-info1'>
+              <h3 class='post-name'>
+                商品名：<%= post.name %>
+              </h3>
+              <div class="post-evaluation">
+                <span>評価：</span>
+                  <span id="star-rate-<%= post.id %>"></span>
+                  <script>
+                    $('#star-rate-<%= post.id %>').raty({
+                      size: 36,
+                      starOff: "<%= asset_path('star-off.png') %>",
+                      starOn: "<%= asset_path('star-on.png') %>",
+                      starHalf: "<%= asset_path('star-half.png') %>",
+                      half: true,
+                      readOnly: true,
+                      score: <%= post.evaluation %>,
+                    });
+                  </script>
+                  <%= post.evaluation %>
+              </div>
+              <div class="post-nickname">
+                <%= post.user.nickname %>さん
+              </div>
+              <div class='item-price'>
+                <span><%= post.price %>円(税込み)</span>
+              </div>
             </div>
-            <div>
-              <span>クチコミ評価</span>
-                <p id="star-rate-<%= post.id %>"></p>
-                <script>
-                  $('#star-rate-<%= post.id %>').raty({
-                    size: 36,
-                    starOff: "<%= asset_path('star-off.png') %>",
-                    starOn: "<%= asset_path('star-on.png') %>",
-                    starHalf: "<%= asset_path('star-half.png') %>",
-                    half: true,
-                    readOnly: true,
-                    score: <%= post.evaluation %>,
-                  });
-                </script>
-                <%= post.evaluation %>
-            </div>
-            <div>
-              <%= post.created_at.strftime("%Y.%m.%d") %>
-            </div>
-            <div>
-              <%= post.user.nickname %>
+            <div class="post-info2">
+              <div class="post-date">
+                更新日時：<%= post.created_at.strftime("%Y.%m.%d") %>
+              </div>
             </div>
           </div>
           <% end %>
@@ -64,7 +68,19 @@
         <% end %>
       <% end %>
     </ul>
-  </div>
   <%= link_to '投稿一覧', posts_path %>
+  </div>
   <%# 最新の投稿3件 %>
+
+  <%# カテゴリー一覧 %>
+  <div class="item-categories">
+    <h2>
+      カテゴリー一覧
+    </h2>
+    <ul>
+      <li>化粧水</li>
+    </ul>
+  </div>
+  <%# /カテゴリー一覧 %>
+  </div>
 </div>

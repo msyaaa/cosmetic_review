@@ -79,3 +79,56 @@
   transform: rotateX(180deg);
 }
 /* --画面上部 */
+
+/* 画面メイン */
+.item-contents > h2 {
+  text-align: center;
+  font-size: 30px;
+  padding: 2% 0;
+  border-top: 2px solid turquoise;
+  border-bottom: 2px solid turquoise;
+  background: linear-gradient( #ffffe0, #fafad2, #fffacd);
+}
+.main-contents {
+  display: flex;
+  padding: 5vh 0;
+  width: 75vw;
+  margin: 0 auto;
+}
+
+.post-link {
+  display: flex;
+  padding: 1%;
+  border-bottom: 1px dotted black;
+}
+
+.post-info-contents {
+  display: flex;
+  width: 100%;
+  margin-left: 1%;
+  color: black;
+}
+
+.post-info1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 180px) ;
+}
+.post-info1 > div, .post-info1 > h3 {
+  width: 50%;
+}
+.post-info2 {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.item-contents{
+  width: 70%;
+}
+
+.item-categories {
+  width: 30%;
+}
+/* --画面メイン */
