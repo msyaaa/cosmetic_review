@@ -131,6 +131,22 @@
 .item-categories {
   width: 30%;
 }
+
+.post-index-box {
+  margin: 0 auto;
+  text-align: center;
+  width: 40%;
+  margin-top: 10px;
+}
+
+.post-index-btn{
+  color: violet;
+  border: 1px solid violet;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100%;
+  padding: 2vh 5vw;
+}
 /* --画面メイン */
 
 /* カテゴリー一覧 */
