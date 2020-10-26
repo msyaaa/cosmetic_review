@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :index_post, only: [:top, :index, :show]
   def top
+    @categories = Category.all
   end
   def index
   end

@@ -78,9 +78,15 @@
       カテゴリー一覧
     </h2>
     <ul>
-      <li>化粧水</li>
-    </ul>
+    <% @categories.each do |category| %>
+      <li>
+      <%= link_to do %>
+        <%= category.name %>
+      <% end %>
+      </li>
+    <% end %>
   </div>
+  </ul>
   <%# /カテゴリー一覧 %>
   </div>
 </div>

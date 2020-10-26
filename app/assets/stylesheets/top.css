@@ -132,3 +132,9 @@
   width: 30%;
 }
 /* --画面メイン */
+
+/* カテゴリー一覧 */
+.item-categories li:first-child {
+  display: none;
+}
+/* --カテゴリー一覧 */
