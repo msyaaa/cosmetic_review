@@ -1,5 +1,154 @@
+/* 詳細画面上部 */
+.post-box {
+  display: flex;
+  padding: 5vh 0 3vh;
+  width: 75vw;
+  margin: 0 auto;
+  /* border-bottom: 1px solid #999; */
+}
+
+/* 左 */
+.post-nickname-date {
+  display: flex;
+  justify-content: space-between;
+}
 .item-box-img {
   width: 30vw;
   height: 30vh;
   object-fit: contain;
+  margin-bottom: 10px;
 }
+
+.user-img-content {
+  display: flex;
+  align-items: center;
+}
+.user-img-content a {
+  color: black;
+}
+
+.mini-img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.post-date {
+  display: flex;
+  align-items: center;
+}
+
+/* --左 */
+
+/* 右 */
+.post-detail {
+  width: calc(100% - 30vw);
+  margin-left: 3vw;
+}
+.post-detail > h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 40px;
+  border-left: 3px solid violet;
+  padding-left: 15px;
+}
+.detail-table {
+  width: 100%;
+  /* height: calc(100% - 40px); */
+  text-align: left;
+  line-height: 5vh;
+}
+.detail-table tr {
+  border-bottom: 1px solid black;
+}
+/* --右 */
+.item-explain-box {
+  display: flex;
+  padding: 4vh;
+  width: 75vw;
+  margin: 0 auto;
+  /* border-bottom: 1px solid #999; */
+  background: linear-gradient( #ffffe0, #fafad2, #fffacd);
+}
+.item-explain-box p {
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #f5deb3;
+}
+/* --詳細画面上部 */
+
+/* 編集・削除ボタン */
+.edit-btn-contents {
+  display: flex;
+  justify-content: flex-end;
+  width: 75vw;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+.edit-btn-contents a {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+.item-green-btn {
+  color: limegreen;
+  border: 2px solid limegreen;
+}
+.item-green-btn:hover {
+  color:white;
+  background: limegreen;
+}
+.item-destroy {
+  color: red;
+  border: 2px solid red;
+  margin-left: 20px;
+}
+.item-destroy:hover {
+  color:white;
+  background: red;
+}
+/* --編集・削除ボタン */
+
+/* 関連商品のクチコミ */
+.relative-item-post {
+  padding: 5vh 0 3vh;
+  width: 75vw;
+  margin: 0 auto;
+}
+
+.relative-item-post > h2{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 40px;
+  border-left: 3px solid violet;
+  padding-left: 15px;
+}
+
+.relative-post-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 25px;
+}
+
+.post-list {
+  display: flex;
+  display: inline-block;
+  width: calc((100% - 50px) / 3);
+  /* text-align: center; */
+}
+.post-list > a {
+  color: black;
+}
+.post-list div {
+  padding: 3px;
+}
+/* --関連商品のクチコミ */
