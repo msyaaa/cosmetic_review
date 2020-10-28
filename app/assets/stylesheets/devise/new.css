@@ -32,12 +32,10 @@
   padding: 0 25px 15px;
   width: 70%;
 }
-.field:nth-of-type(3) > input {
+input[type="radio"], #profile-image {
   width: auto;
 }
-.field:nth-of-type(8) > input {
-  width: auto;
-}
+
 .top-field {
   margin-top: 40px;
 }
