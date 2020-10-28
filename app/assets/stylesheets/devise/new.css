@@ -1,0 +1,65 @@
+.form-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+/* フォームタイトル */
+.form-header {
+  border-bottom: 1px solid black;
+  padding: 0 25px 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.form-header-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+/* --フォームタイトル */
+
+.form-wrap input, .form-wrap textarea {
+  outline: none;
+  padding: 10px 15px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.field {
+  padding: 0 25px 15px;
+  width: 70%;
+}
+.field:nth-of-type(3) > input {
+  width: auto;
+}
+.field:nth-of-type(8) > input {
+  width: auto;
+}
+.top-field {
+  margin-top: 40px;
+}
+
+.form-text-wrap {
+  margin-bottom: 5px;
+}
+
+.input-default {
+  resize: none;
+}
+
+/* 登録ボタン */
+.actions {
+  width: 70%;
+  padding: 0 25px 15px;
+}
+.actions > input {
+  width:100%;
+  background-color: violet;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+/* --登録ボタン */
