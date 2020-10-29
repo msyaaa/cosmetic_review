@@ -1,17 +1,14 @@
 <%= render "shared/second-header" %>
 <div class="reviews-post-contents">
+  <%= form_with model: @post, local: true do |f| %>
   <div class="reviews-post-main">
-    <h2 class="reviews-post-title">口コミの投稿</h2>
-    <%= form_with model: @post, local: true do |f| %>
+    <h2 class="reviews-post-title">クチコミの投稿</h2>
   
     <%# 口コミ商品の画像 %>
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        口コミ商品の画像
-      </div>
+    <div class="field img-upload top-field">
       <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
+        <p class="weight-bold-text">
+          画像を追加
         </p>
         <%= f.file_field :image, id:"item-image" %>
       </div>
@@ -19,64 +16,60 @@
     </div>
     <%# /口コミ商品の画像 %>
     <%# 商品名と商品説明 %>
-    <div class="new-items">
+    <div class="field new-items">
       <div class="weight-bold-text">
         商品名
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 50文字まで)", maxlength:"50" %>
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          商品の説明
-        </div>
-        <%= f.text_area :description, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（使いやすさ、効能・効果、コスパ、注意点など）" ,rows:"7" ,maxlength:"1000" %>
+      <%= f.text_area :name, class:"items-text input-default", id:"item-name", placeholder:"（必須 50文字まで）", maxlength:"50" %>
+    </div>
+    <div class="field items-explain">
+      <div class="weight-bold-text">
+        レビュー
       </div>
+      <%= f.text_area :description, class:"items-text input-default", id:"item-info", placeholder:"（必須 1,000文字まで  つけ心地、効能・効果、コスパ、オススメの使い方など）" ,rows:"7" ,maxlength:"1000" %>
     </div>
     <%# /商品名と商品説明 %>
 
-    <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
-      <div class="form">
+      <div class="field">
         <div class="weight-bold-text">
           カテゴリー
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+      <div class="field">
         <div class="weight-bold-text">
           商品の評価
         </div>
         <div class="field" id="star">
-            <%= f.label :evaluation,  "星評価" %>
-            <%= f.hidden_field :evaluation, id: :review_star %>
-        </div>
+          <%= f.label :evaluation, "星評価：" %>
+          <%= f.hidden_field :evaluation, id: :review_star %>
         <script>
             $('#star').raty({
-                size     : 36,
-                starOff:  '<%= asset_path('star-off.png') %>',
-                starOn : '<%= asset_path('star-on.png') %>',
-                starHalf: '<%= asset_path('star-half.png') %>',
-                scoreName: 'post[evaluation]',
-                half: true,
+              size     : 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              scoreName: 'post[evaluation]',
+              half: true,
             });
         </script>
+        </div>
       </div>
-    </div>
 
-    <div class="buy-shop">
+    <div class="field buy-shop">
       <div class="weight-bold-text">購入店</div>
       <div>
-      <%= f.text_field :shop_name, class:"shop-name-input" %>
+        <%= f.text_field :shop_name, class:"shop-name-input", placeholder:"（必須 50文字まで）" %>
       </div>
     </div>
 
     <%# 購入価格 %>
-    <div class="buy-price">
+    <div class="field buy-price">
       <div class="weight-bold-text question-text">
         <span>購入価格<br>(¥0〜9,999,999)</span>
       </div>
-      <div>
-        <div class="price-content">
-          <div class="price-text">
-            <span>価格</span>
-          </div>
+      <div class="price-content">
+        <div class="price-text">
           <span class="buy-yen">¥</span>
           <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
         </div>
@@ -85,11 +78,13 @@
     <%# /購入価格 %>
 
     <%# 下部ボタン %>
-    <div class="post-btn-contents">
-      <%= f.submit "投稿する" ,class:"post-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    <div class="actions">
+      <%= f.submit "投稿する" %>
     </div>
     <%# /下部ボタン %>
+    <div class="back-btn">
+      ＜ <%=link_to '内容を削除してトップへ戻る', root_path %>
+    </div>
   </div>
   <% end %>
 </div>
