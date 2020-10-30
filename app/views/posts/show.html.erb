@@ -10,6 +10,9 @@
           <%= image_tag @post.user.image ,class:"mini-img" if @post.user.image.attached? %>
           <%= link_to @post.user.nickname, user_path(@post.user.id) %>
         </div>
+        <div class='star-btn' id="like_<%= @post.id %>">
+          <%= render "likes/like", post: @post %>
+        </div>
         <div class="post-date">
           更新日時：<%= @post.created_at.strftime("%Y.%m.%d") %>
         </div>

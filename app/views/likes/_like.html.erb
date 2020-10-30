@@ -1,0 +1,11 @@
+<% if !Like.exists?(user_id: current_user.id, post_id: post.id) %>
+  <%= link_to post_likes_path(post.id), method: :post, remote: true, class:"like-btn" do %>
+    <i class="fas fa-star star-icon"></i>
+  <% end %>
+  <%= post.likes.count %>
+<% else %>
+  <%= link_to post_like_path(post_id: post.id, id: post.likes[0].id), method: :delete, remote: true, class:"like-btn" do %>
+    <i class="fas fa-star star-icon"></i>
+  <% end %>
+  <%= post.likes.count %>
+<% end %>
