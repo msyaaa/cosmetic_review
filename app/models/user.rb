@@ -18,5 +18,6 @@ class User < ApplicationRecord
   enum gender: { 男性: 0, 女性: 1, その他: 2 }
 
   has_many :posts
+  has_many :likes
   has_one_attached :image
 end
