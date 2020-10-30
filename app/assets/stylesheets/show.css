@@ -19,7 +19,7 @@
   margin-bottom: 10px;
 }
 
-.user-img-content {
+.user-img-content, .star-btn {
   display: flex;
   align-items: center;
 }
@@ -34,6 +34,24 @@
   border-radius: 50%;
   margin-right: 7px;
 }
+
+/* お気に入りボタン */
+.star-count1, .star-count2 {
+  margin-left: 3px;
+}
+.star-icon1, .star-count1 {
+  color: gray;
+}
+.like-btn:hover + .star-count1 {
+  color: rgb(224, 36, 94);
+}
+.like-btn:hover > .star-icon1 {
+  color: rgb(224, 36, 94);
+}
+.star-icon2, .star-count2 {
+  color: rgb(224, 36, 94);
+}
+/* --お気に入りボタン */
 
 .post-date {
   display: flex;
