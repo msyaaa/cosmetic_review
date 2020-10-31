@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get 'top'
     end
+    resources :likes, only: [:create, :destroy]
   end
   resources :users, only: [:show]
 end
