@@ -1,62 +1,68 @@
 <%= render "shared/header" %>
 <div class="user-show">
-  <div class="user-box">
-    <div class='user-img-content'>
-      <%= image_tag @user.image ,class:"user-box-img" if @user.image.attached? %>
+  <div class="user-show-box">
+    <div class="button-box">
+      <div class="post-btn-contents">
+        <%=link_to '←', posts_path, class:"back-button" %>
+      </div>
+      <div class="profile-edit-box">
+        <% if (user_signed_in?) && (current_user.id == @user.id) %>
+          <%= link_to 'プロフィール編集', "#", method: :get, class: "item-green-btn" %>
+        <% end %>
+      </div>
     </div>
-    <h2 class="name">
-      <span>ニックネーム</span>
-      <%= @user.nickname %>
-    </h2>
-    <div class="user-gender">
-      <span>性別</span>
-      <%= @user.gender %>
-    </div>
-    <div class="user-birthday">
-      <span>生年月日</span>
-        <%= @user.birthday.strftime("%Y年%m月%d日") %>
-    </div>
-    <div class="user-age">
-      <span>年齢</span>
-        <%= @age %> 歳
-    </div>
-
-    <div class="user-explain-box">
-      <span>自己紹介</span>
-      <span><%= @user.introduce %></span>
+    <div class="user-box">
+      <div class='user-img-content'>
+        <%= image_tag @user.image ,class:"user-box-img" if @user.image.attached? %>
+      </div>
+      <h2 class="nickname">
+        <%= @user.nickname %>
+      </h2>
+      <div class="user-gender">
+        <%# <span>性別：</span> %>
+        <%= @user.gender %> /
+      <%# </div> %>
+      <%# <div class="user-birthday">
+        <span>生年月日：</span> %>
+          <%#= @user.birthday.strftime("%Y年%m月%d日") %>
+      <%# </div> %>
+      <%# <div class="user-age"> %>
+        <%# <span>年齢：</span> %>
+          <%= @age %> 歳
+      </div>
+      <div class="user-explain-box">
+        <%# <span class="user-explain-title">自己紹介</span> %>
+        <p class="user-explain-text"><%= @user.introduce %></p>
+      </div>
     </div>
   </div>
-  <% if current_user.id == @user.id %>
-    <%#= link_to 'プロフィールの編集', edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
-  <% end %>
-  <div class="post-btn-contents">
-    <%=link_to 'もどる', posts_path, class:"back-btn" %>
-  </div>
-  <% if (user_signed_in?) && (current_user.id == @user.id) %>
-    <%= link_to 'プロフィール編集', "#", method: :get, class: "user-red-btn" %>
-  <% end %>
 
-  <%# 投稿一覧 %>
-  <div>
-    <span>投稿したクチコミ一覧</span>
-    <ul class="post-lists">
-    <% @posts.each do |post| %>
-      <li class='list'>
-        <%= link_to post_path(post.id) do %>
-        <div class='post-img-content'>
-          <%= image_tag post.image, class: "post-img" %>
-        </div>
-        <div class='post-info'>
-          <span>商品名</span>
-          <h3 class='post-name'>
-            <%= post.name %>
-          </h3>
-          <div class='item-price'>
-            <span><%= post.price %>円<br>(税込み)</span>
+  <div class="switch-contents">
+    <%# <h2>投稿したクチコミ一覧</h2>
+    <h2>お気に入り</h2> %>
+    <input id="posts" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="posts">投稿したクチコミ一覧</label>
+    <input id="likes" type="radio" name="tab_item">
+    <label class="tab_item" for="likes">お気に入り</label>
+
+    <%# 投稿一覧 %>
+    <div class="post-lists-box" id="post-lists-box">
+      <ul class="relative-post-lists">
+      <% @posts.each do |post| %>
+        <li class='post-list'>
+          <%= link_to post_path(post.id) do %>
+          <div class='post-img-content'>
+            <%= image_tag post.image, class: "post-img" %>
           </div>
-          <div>
-            <span>クチコミ評価</span>
-              <p id="star-rate-<%= post.id %>"></p>
+            <div class='relative-post-name'>
+              商品名：<%= post.name %>
+            </div>
+            <div class='relative-item-price'>
+              <span><%= post.price %>円(税込み)</span>
+            </div>
+            <div class="relative-post-evaluation">
+              <span>評価：</span>
+              <span id="star-rate-<%= post.id %>"></span>
               <script>
                 $('#star-rate-<%= post.id %>').raty({
                   size: 36,
@@ -69,28 +75,27 @@
                 });
               </script>
               <%= post.evaluation %>
-          </div>
-          <div>
-            <%= post.created_at.strftime("%Y.%m.%d") %>
-          </div>
-        </div>
-        <% end %>
-      </li>
-    <% end %>
-    </ul>
-  </div>
-  <%# /投稿一覧 %>
+            </div>
+            <div class="relative-post-date">
+              更新日時：<%= post.created_at.strftime("%Y.%m.%d") %>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+    <%# /投稿一覧 %>
 
-  <%# お気に入り一覧 %>
-  <h2>お気に入り</h2>
-  <% if @likes.present? %>
-    <ul class="relative-post-lists">
-    <% @likes.each do |like| %>
-      <li class='post-list'>
-        <%= link_to post_path(like.id) do %>
-        <div class='post-img-content'>
-          <%= image_tag like.image, class: "post-img" %>
-        </div>
+    <%# お気に入り一覧 %>
+    <div class="post-lists-box" id="like-lists-box">
+    <% if @likes.present? %>
+      <ul class="relative-post-lists">
+      <% @likes.each do |like| %>
+        <li class='post-list'>
+          <%= link_to post_path(like.id) do %>
+          <div class='post-img-content'>
+            <%= image_tag like.image, class: "post-img" %>
+          </div>
           <div class='relative-post-name'>
             商品名：<%= like.name %>
           </div>
@@ -99,31 +104,33 @@
           </div>
           <div class="relative-post-evaluation">
             <span>評価：</span>
-              <span id="star-rate-<%= like.id %>"></span>
-              <script>
-                $('#star-rate-<%= like.id %>').raty({
-                  size: 36,
-                  starOff: "<%= asset_path('star-off.png') %>",
-                  starOn: "<%= asset_path('star-on.png') %>",
-                  starHalf: "<%= asset_path('star-half.png') %>",
-                  half: true,
-                  readOnly: true,
-                  score: <%= like.evaluation %>,
-                });
-              </script>
-              <%= like.evaluation %>
+            <span id="star-rate-<%= like.id %>"></span>
+            <script>
+              $('#star-rate-<%= like.id %>').raty({
+                size: 36,
+                starOff: "<%= asset_path('star-off.png') %>",
+                starOn: "<%= asset_path('star-on.png') %>",
+                starHalf: "<%= asset_path('star-half.png') %>",
+                half: true,
+                readOnly: true,
+                score: <%= like.evaluation %>,
+              });
+            </script>
+            <%= like.evaluation %>
           </div>
-          <div class='user-img-content'>
-            <%= image_tag like.user.image ,class:"mini-img" if like.user.image.attached? %>
-            <%= link_to like.user.nickname, user_path(like.user.id) %>
-          </div>
-          <div class="relative-post-date">
-            更新日時：<%= like.created_at.strftime("%Y.%m.%d") %>
-          </div>
-        <% end %>
-      </li>
+            <div class='user-img-content'>
+              <%= image_tag like.user.image ,class:"mini-img" if like.user.image.attached? %>
+              <%= link_to like.user.nickname, user_path(like.user.id) %>
+            </div>
+            <div class="relative-post-date">
+              更新日時：<%= like.created_at.strftime("%Y.%m.%d") %>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
     <% end %>
-    </ul>
-  <% end %>
-  <%# /お気に入り一覧。 %>
+    </div>
+    <%# /お気に入り一覧。 %>
+  </div>
 </div>

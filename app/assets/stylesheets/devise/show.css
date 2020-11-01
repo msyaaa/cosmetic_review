@@ -1,0 +1,114 @@
+.user-show-box {
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 0 3vh;
+  width: 60vw;
+  margin: 0 auto;
+  border-left: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+}
+
+.button-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  /* border-top: 1px solid black; */
+  border-bottom: 1px solid #e7e7e7;
+}
+
+/* 戻るボタン */
+.post-btn-contents a {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 38px;
+}
+.back-button {
+  color: violet;
+  padding: 5px;
+}
+.back-button:hover {
+  background-color: rgb(238, 130, 238, 0.2);
+  border-radius: 50%;
+}
+/* --戻るボタン */
+
+/* 編集ボタン */
+.profile-edit-box {
+  line-height: 36px;
+}
+.profile-edit-box a {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+/* --編集ボタン */
+
+.user-box {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.user-box-img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-box div, .nickname {
+  padding: 5px;
+}
+
+.nickname {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.user-gender {
+  color: #999;
+}
+
+/* マイページ下部切り替え */
+.switch-contents {
+  width: 60vw;
+  margin: 0 auto;
+  border-left: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+}
+.tab_item {
+  width: calc(100% / 2);
+  text-align: center;
+  display: block;
+  padding: 30px;
+  font-weight: bold;
+  float: left;
+  color:  #999;
+  transition: all 0.2s ease;
+}
+
+.tab_item:hover {
+  background-color: rgb(64, 224, 208, 0.2);
+  color: turquoise;
+  cursor: pointer;
+}
+
+input[name="tab_item"] {
+  display: none;
+}
+
+.post-lists-box {
+  display: none;
+  clear: left;
+}
+
+#posts:checked + .tab_item, #likes:checked + .tab_item {
+  color: turquoise;
+  border-bottom: 2px solid turquoise;
+}
+
+#posts:checked ~ #post-lists-box,
+#likes:checked ~ #like-lists-box {
+  display: block;
+}
+/* --マイページ下部切り替え */

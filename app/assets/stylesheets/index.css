@@ -3,5 +3,5 @@
   width: 180px;
   height: 100px;
   /* height: 15vh; */
-  object-fit: contain;
+  object-fit: cover;
 }
