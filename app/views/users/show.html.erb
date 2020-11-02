@@ -7,7 +7,7 @@
       </div>
       <div class="profile-edit-box">
         <% if (user_signed_in?) && (current_user.id == @user.id) %>
-          <%= link_to 'プロフィール編集', "#", method: :get, class: "item-green-btn" %>
+          <%= link_to 'プロフィール編集', edit_user_path(current_user.id), method: :get, class: "item-green-btn" %>
         <% end %>
       </div>
     </div>

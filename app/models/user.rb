@@ -8,8 +8,8 @@ class User < ApplicationRecord
     EMAILE_VALIDATION = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
     validates :email, uniqueness: true, format: { with: EMAILE_VALIDATION }
     PASSWORD_VALIDATION = /\A[a-zA-Z0-9]+\z/.freeze
-    validates :password, confirmation: true, format: { with: PASSWORD_VALIDATION }
-    validates :password_confirmation
+    validates :password, confirmation: true, format: { with: PASSWORD_VALIDATION }, on: :create
+    validates :password_confirmation, on: :create
     validates :gender
     validates :birthday
   end
