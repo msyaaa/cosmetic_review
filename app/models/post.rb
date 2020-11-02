@@ -2,8 +2,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
   has_one_attached :image
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :category
+  # extend ActiveHash::Associations::ActiveRecordExtensions
+  # belongs_to_active_hash :category
 
   with_options presence: true do
     validates :name, length: { maximum: 50 }
@@ -13,7 +13,7 @@ class Post < ApplicationRecord
     validates :description, length: { maximum: 1000 }
     validates :image, presence: { message: 'を選択してください' }
     validates :evaluation, numericality: { less_than_or_equal_to: 5, greater_than_or_equal_to: 0.5 }, presence: { message: 'を選択してください' }
-    validates :category_id, numericality: { other_than: 1, message: 'を選択してください' }
+    # validates :category_id, numericality: { other_than: 1, message: 'を選択してください' }
   end
   validates :shop_name, length: { maximum: 50 }
 end
