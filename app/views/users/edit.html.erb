@@ -1,0 +1,53 @@
+<%= render "shared/header" %>
+
+<%= form_with model: current_user, local: true do |f| %>
+
+<div class="form-wrap">
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      プロフィールの編集
+    </h1>
+  </div>
+  <%= render 'shared/error-messages', model: f.object %>
+  <div class="field top-field">
+    <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"ニックネーム" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :男性 %>
+    <%= f.radio_button :gender, :男性 %>
+    <%= f.label :女性 %>
+    <%= f.radio_button :gender, :女性 %>
+    <%= f.label :その他 %>
+    <%= f.radio_button :gender, :その他 %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, autocomplete: "email", placeholder:"メールアドレス" %>
+  </div>
+
+  <div class="field">
+    <div class='form-text-wrap'>
+      <label class="form-text">生年月日</label>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= f.date_field :birthday, id:"birthday" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <p>
+      プロフィール画像（任意）
+    </p>
+    <%= f.file_field :image, id:"profile-image" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :introduce, class:"profile-text input-default", id:"profile-info", placeholder:"自己紹介（任意 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "変更を保存" %>
+  </div>
+</div>
+<% end %>
