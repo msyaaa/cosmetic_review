@@ -153,4 +153,15 @@
 .item-categories li:first-child {
   display: none;
 }
+.category_list {
+  display: flex;
+}
+.parents_list {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+}
+.parents_list, .children_list, .grand_children_list {
+  width: calc(100% / 3);
+}
 /* --カテゴリー一覧 */
