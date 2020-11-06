@@ -27,7 +27,7 @@
   padding: 5px;
 }
 .back-button:hover {
-  background-color: rgb(238, 130, 238, 0.2);
+  background-color: rgba(238, 130, 238, 0.2);
   border-radius: 50%;
 }
 /* --戻るボタン */
@@ -88,7 +88,7 @@
 }
 
 .tab_item:hover {
-  background-color: rgb(64, 224, 208, 0.2);
+  background-color: rgba(64, 224, 208, 0.2);
   color: turquoise;
   cursor: pointer;
 }
