@@ -130,6 +130,16 @@
 
 .item-categories {
   width: 30%;
+  padding-left: 10px;
+}
+.item-categories > h2 {
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+.category-button {
+  color: black;
+  line-height: 40px;
 }
 
 .post-index-box {
@@ -148,20 +158,3 @@
   padding: 2vh 5vw;
 }
 /* --画面メイン */
-
-/* カテゴリー一覧 */
-.item-categories li:first-child {
-  display: none;
-}
-.category_list {
-  display: flex;
-}
-.parents_list {
-  display: flex;
-  flex-direction: column;
-  /* flex-wrap: wrap; */
-}
-.parents_list, .children_list, .grand_children_list {
-  width: calc(100% / 3);
-}
-/* --カテゴリー一覧 */

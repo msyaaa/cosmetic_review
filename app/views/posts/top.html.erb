@@ -92,23 +92,18 @@
     </div> %>
 
 
-    <%= link_to  posts_path, id: 'categoBtn' do %>
+    <%= link_to  posts_path, class: "category-button", id: 'categoBtn' do %>
       カテゴリーから探す
     <% end %>
     <div id="tree_menu">
       <ul class="categoryTree">
         <% @parents.each do |parent| %>
           <li class="category_parent">
-            <%= link_to post_path(parent) do %>
+            <%= link_to search_post_path(parent) do %>
               <input type="button" value="<%= parent.name %>" name="<%= parent.id %>" class="parent_btn">
             <% end %>
           </li>
         <% end %>
-        <li class="category_parent">
-          <%= link_to posts_path do %>
-            <input type="button" value="全てのカテゴリー" id="all_btn">
-          <% end %>
-        </li>
       </ul>
       <ul class="categoryTree-child">
       </ul>

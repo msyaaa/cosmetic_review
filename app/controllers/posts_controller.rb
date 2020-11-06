@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :index_post, only: [:top, :index, :show]
   before_action :set_parents
+  # before_action :set_category
   def top
     # @categories = Category.all
     # @children = Category.find(params[:parent_id]).children
@@ -82,6 +83,38 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    # @posts = @category.set_items
+    # @posts = @posts.where(user_id: nil).order("created_at DESC").page(params[:page]).per(9)
+
+
+    # カテゴリ名を取得するために@categoryにレコードをとってくる
+    @category = Category.find_by(id: params[:id])
+
+    # 親カテゴリーを選択していた場合の処理
+    if @category.ancestry == nil
+      # Categoryモデル内の親カテゴリーに紐づく孫カテゴリーのidを取得
+      category = Category.find_by(id: params[:id]).indirect_ids
+      # 孫カテゴリーに該当するitemsテーブルのレコードを入れるようの配列を用意
+      @posts = []
+      # find_itemメソッドで処理
+      find_item(category)
+
+    # 孫カテゴリーを選択していた場合の処理
+    elsif @category.ancestry.include?("/")
+      # Categoryモデル内の親カテゴリーに紐づく孫カテゴリーのidを取得
+      @posts = Post.where(category_id: params[:id])
+
+    # 子カテゴリーを選択していた場合の処理
+    else
+      category = Category.find_by(id: params[:id]).child_ids
+      # 孫カテゴリーに該当するitemsテーブルのレコードを入れるようの配列を用意
+      @posts = []
+      # find_itemメソッドで処理
+      find_item(category)
+    end
+  end
+
   private
 
   def post_params
@@ -98,5 +131,25 @@ class PostsController < ApplicationController
 
   def set_parents
     @parents = Category.where(ancestry: nil)
+  end
+
+  # def set_category
+  #   @category = Category.find(params[:id])
+  # end
+
+  def find_item(category)
+    category.each do |id|
+      post_array = Post.where(category_id: id)
+      # find_by()メソッドで該当のレコードがなかった場合、itemオブジェクトに空の配列を入れないようにするための処理
+      if post_array.present?
+        post_array.each do |post|
+          if post.present?
+          # else
+            # find_by()メソッドで該当のレコードが見つかった場合、@item配列オブジェクトにそのレコードを追加する
+            @posts.push(post)
+          end
+        end
+      end
+    end
   end
 end

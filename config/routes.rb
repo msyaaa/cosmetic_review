@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
+    member do
+      get 'search'
+    end
     resources :likes, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit, :update]

@@ -68,7 +68,7 @@ $(document).ready(function () {
   function childBuild(children) {
     let child_category = `
                         <li class="category_child">
-                          <a href="/posts/${children.id}"><input class="child_btn" type="button" value="${children.name}" name= "${children.id}">
+                          <a href="/posts/${children.id}/search"><input class="child_btn" type="button" value="${children.name}" name= "${children.id}">
                           </a>
                         </li>
                         `
@@ -78,7 +78,7 @@ $(document).ready(function () {
   function gcBuild(children) {
     let gc_category = `
                         <li class="category_grandchild">
-                          <a href="/posts/${children.id}"><input class="gc_btn" type="button" value="${children.name}" name= "${children.id}">
+                          <a href="/posts/${children.id}/search"><input class="gc_btn" type="button" value="${children.name}" name= "${children.id}">
                           </a>
                         </li>
                         `
