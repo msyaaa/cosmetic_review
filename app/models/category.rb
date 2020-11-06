@@ -1,17 +1,25 @@
-class Category < ActiveHash::Base
-  self.data = [
-    { id: 1, name: '---' },
-    { id: 2, name: '化粧水' },
-    { id: 3, name: '乳液' },
-    { id: 4, name: 'オールインワン' },
-    { id: 5, name: 'クレンジング' },
-    { id: 6, name: '洗顔料' },
-    { id: 7, name: '日焼け止め' },
-    { id: 8, name: 'リップ' },
-    { id: 9, name: '香水' },
-    { id: 10, name: 'ヘアカラー' },
-    { id: 11, name: 'ヘアスタイリング' },
-    { id: 12, name: 'シャンプー・コンディショナー' },
-    { id: 13, name: 'コンタクトレンズ' }
-  ]
+class Category < ApplicationRecord
+  has_many :posts
+  has_ancestry
+
+  # def set_items
+  #   # 親カテゴリーの場合
+  #   if self.root?
+  #     start_id = self.indirects.first.id
+  #     end_id = self.indirects.last.id
+  #     posts = Post.where(category_id: start_id..end_id)
+  #     return posts
+  
+  #     # 子カテゴリーの場合
+  #   elsif self.has_children?
+  #     start_id = self.children.first.id
+  #     end_id = self.children.last.id
+  #     posts = Post.where(category_id: start_id..end_id)
+  #     return posts
+  
+  #     # 孫カテゴリーの場合
+  #   else
+  #     return self.posts
+  #   end
+  # end
 end

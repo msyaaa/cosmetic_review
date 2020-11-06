@@ -1,8 +1,10 @@
 <%= render "shared/header" %>
-
 <div class="main-contents">
   <div class='item-contents'>
-    <h2 class='title'>クチコミ一覧</h2>
+    <h2 class='title'><%= @category.name %></h2>
+    <% if @posts.empty? %>
+      <p class="none-posts">該当するクチコミが見つかりません。検索条件を変えて、再度お試しください。</p>
+    <% end %>
     <%# クチコミ一覧 %>
     <ul class="post-lists">
     <% @posts.each do |post| %>

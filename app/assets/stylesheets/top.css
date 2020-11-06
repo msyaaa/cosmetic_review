@@ -130,6 +130,16 @@
 
 .item-categories {
   width: 30%;
+  padding-left: 10px;
+}
+.item-categories > h2 {
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+.category-button {
+  color: black;
+  line-height: 40px;
 }
 
 .post-index-box {
@@ -148,9 +158,3 @@
   padding: 2vh 5vw;
 }
 /* --画面メイン */
-
-/* カテゴリー一覧 */
-.item-categories li:first-child {
-  display: none;
-}
-/* --カテゴリー一覧 */
