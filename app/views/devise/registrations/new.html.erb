@@ -1,14 +1,13 @@
 <%= render "shared/third-header" %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
 <div class="form-wrap">
   <div class='form-header'>
     <h1 class='form-header-text'>
       新規登録
     </h1>
   </div>
+<%= render 'shared/error-messages', model: f.object %>
   <div class="field top-field">
     <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"ニックネーム" %>
   </div>

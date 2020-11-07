@@ -37,7 +37,7 @@ input[type="radio"], #profile-image {
 }
 
 .top-field {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .form-text-wrap {
@@ -61,3 +61,13 @@ input[type="radio"], #profile-image {
   color: white;
 }
 /* --登録ボタン */
+
+/* エラーメッセージ */
+.login-flash-message, .error-message:first-child {
+  color: red;
+  margin-top: 30px;
+}
+.error-message {
+  color: red;
+}
+/* --エラーメッセージ */

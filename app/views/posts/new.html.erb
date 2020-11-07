@@ -3,7 +3,7 @@
   <%= form_with model: @post, local: true do |f| %>
   <div class="reviews-post-main">
     <h2 class="reviews-post-title">クチコミの投稿</h2>
-  
+    <%= render 'shared/error-messages', model: f.object %>
     <%# 口コミ商品の画像 %>
     <div class="field img-upload top-field">
       <div class="click-upload">

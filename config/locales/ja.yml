@@ -13,7 +13,7 @@ ja:
        shop_name: 購入店
        evaluation: 商品の評価
        price: 購入価格
-       category_id: カテゴリー
+       category: カテゴリー
    time:
      formats:
        default: "%Y/%m/%d %H:%M:%S"

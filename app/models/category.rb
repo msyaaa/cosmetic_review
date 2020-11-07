@@ -1,7 +1,6 @@
 class Category < ApplicationRecord
   has_many :posts
   has_ancestry
-
   # def set_items
   #   # 親カテゴリーの場合
   #   if self.root?
