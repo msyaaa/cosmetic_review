@@ -226,6 +226,16 @@ $(document).ready(function () {
       }, 800);
     },
     mouseenter: function () {
+      timeChosed = setTimeout(function () {
+        $(".categoryTree-grandchild").hide();
+        $(".categoryTree-child").hide();
+        $(".categoryTree").hide();
+        $(this).hide();
+        $('.parent_btn').css('color', '');
+        $('.parent_btn').css('background-color', '');
+        $(".category_child").remove();
+        $(".category_grandchild").remove();
+      }, 800);
       clearTimeout(timeChosed);
     }
   }, '#tree_menu');
