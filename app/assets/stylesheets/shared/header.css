@@ -33,6 +33,7 @@
 .input-box {
   width: 100%;
   outline: none;
+  padding: 10px;
 }
 
 .btn-hidden {
@@ -42,9 +43,10 @@
 .fa-search {
   font-size: 20px;
   position: absolute;
-  right: 5%;
+  right: 2px;
   top: 50%;
   transform: translateY(-50%);
+  padding: 6px;
 }
 /* --検索バー */
 
