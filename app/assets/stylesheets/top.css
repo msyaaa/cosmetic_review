@@ -92,8 +92,9 @@
 }
 .main-contents {
   display: flex;
+  justify-content: space-between;
   padding: 5vh 0;
-  width: 75vw;
+  width: 80vw;
   margin: 0 auto;
 }
 
@@ -130,8 +131,8 @@
 }
 
 .item-categories {
-  width: 30%;
-  padding-left: 10px;
+  width: 25%;
+  /* margin-right: 50px; */
 }
 .item-categories > h2 {
   font-weight: bold;
