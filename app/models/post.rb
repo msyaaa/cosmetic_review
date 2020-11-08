@@ -17,4 +17,12 @@ class Post < ApplicationRecord
     # validates :category_id, numericality: { other_than: 1, message: 'を選択してください' }
   end
   validates :shop_name, length: { maximum: 50 }
+
+  def self.search(search)
+    if search != ""
+      Post.where('name LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
+  end
 end

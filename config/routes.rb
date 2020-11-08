@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get 'top'
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'name_search'
     end
     member do
       get 'search'
