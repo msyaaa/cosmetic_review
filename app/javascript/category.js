@@ -53,8 +53,7 @@
 //     });  
 //   });
 
-// $(document).ready(function () {
-$(document).on('turbolinks:load', function() {
+$(document).ready(function () {
   // 親カテゴリーを表示
   $('#categoBtn').hover(function (e) {
     e.preventDefault();
