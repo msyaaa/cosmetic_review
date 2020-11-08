@@ -115,6 +115,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def name_search
+    @posts = Post.search(params[:keyword]).order(created_at: :desc)
+    @keyword = params[:keyword]
+  end
+
   private
 
   def post_params

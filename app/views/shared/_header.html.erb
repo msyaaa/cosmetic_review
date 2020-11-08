@@ -4,8 +4,8 @@
   <% end %>
   <%# 検索バー %>
   <div class='search-bar-contents'>
-    <%= form_with url: "#", method: :get, class:"search-form", local: true do |form|  %>
-      <%= form.text_field :keyword, placeholder:'キーワードから探す', class:'input-box' %>
+    <%= form_with url: name_search_posts_path, method: :get, class:"search-form", local: true do |form|  %>
+      <%= form.text_field :keyword, placeholder:'商品名から探す', class:'input-box' %>
       <div class="search-button">
         <label id="btn-label">
           <%= form.submit id:"btn-label", class:"btn-hidden" %>
