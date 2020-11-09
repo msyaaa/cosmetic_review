@@ -95,15 +95,21 @@ class PostsController < ApplicationController
     if @category.ancestry == nil
       # Categoryモデル内の親カテゴリーに紐づく孫カテゴリーのidを取得
       category = Category.find_by(id: params[:id]).indirect_ids
-      # 孫カテゴリーに該当するitemsテーブルのレコードを入れるようの配列を用意
-      @posts = []
-      # find_itemメソッドで処理
-      find_item(category)
+      if category.empty?
+        @posts = Post.where(category_id: @category.id).order(created_at: :desc)
+        # parent_category = Category.find(@category.id)
+        # @posts = parent_category.posts.order(created_at: :desc)
+      else
+        # 孫カテゴリーに該当するitemsテーブルのレコードを入れるようの配列を用意
+        @posts = []
+        # find_itemメソッドで処理
+        find_item(category)
+      end
 
     # 孫カテゴリーを選択していた場合の処理
     elsif @category.ancestry.include?("/")
       # Categoryモデル内の親カテゴリーに紐づく孫カテゴリーのidを取得
-      @posts = Post.where(category_id: params[:id])
+      @posts = Post.where(category_id: params[:id]).order(created_at: :desc)
 
     # 子カテゴリーを選択していた場合の処理
     else
@@ -144,7 +150,7 @@ class PostsController < ApplicationController
 
   def find_item(category)
     category.each do |id|
-      post_array = Post.where(category_id: id)
+      post_array = Post.where(category_id: id).order(created_at: :desc)
       # find_by()メソッドで該当のレコードがなかった場合、itemオブジェクトに空の配列を入れないようにするための処理
       if post_array.present?
         post_array.each do |post|
