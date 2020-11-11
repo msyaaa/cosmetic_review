@@ -9,10 +9,10 @@ RSpec.describe Post, type: :model do
 
     describe 'レビュー投稿機能' do
       context '投稿がうまくいくとき' do
-        it 'name、image、price、description、category_id、evaluationが存在していれば保存できる' do
+        it 'name、image、price、description、evaluation、categoryが存在していれば保存できる' do
           expect(@post).to be_valid
         end
-        it '購入価格が300~9999999の間であること' do
+        it '購入価格が0~9999999の間であること' do
           @post.price = 11_111
           expect(@post).to be_valid
         end
@@ -58,11 +58,6 @@ RSpec.describe Post, type: :model do
           @post.description = Faker::Lorem.paragraphs(number: 500)
           @post.valid?
           expect(@post.errors.full_messages).to include('商品の説明は1000文字以内で入力してください')
-        end
-        it 'category_idが1では保存できない' do
-          @post.category_id = 1
-          @post.valid?
-          expect(@post.errors.full_messages).to include('カテゴリーを選択してください')
         end
         it 'evaluationが空では保存できない' do
           @post.evaluation = ''
