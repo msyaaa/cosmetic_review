@@ -65,6 +65,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path if current_user.id != Post.find(params[:id]).user_id
   end
 
   def update
