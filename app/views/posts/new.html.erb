@@ -1,4 +1,6 @@
 <%= render "shared/second-header" %>
+<% breadcrumb :post_new %>
+<%= render "shared/breadcrumbs" %>
 <div class="reviews-post-contents">
   <%= form_with model: @post, local: true do |f| %>
   <div class="reviews-post-main">

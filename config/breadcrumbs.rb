@@ -45,6 +45,11 @@ crumb :grandchild_category do |category|
   parent :child_category
 end
 
+crumb :post_new do
+  link "新しいクチコミ投稿", new_post_path
+  parent :root
+end
+
 
 # crumb :projects do
 #   link "Projects", projects_path
