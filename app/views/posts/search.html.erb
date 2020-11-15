@@ -1,4 +1,12 @@
 <%= render "shared/header" %>
+<% if @category.root? %>
+<% breadcrumb :parent_category %>
+<% elsif @category.has_children? %>
+<% breadcrumb :child_category %>
+<% else %>
+<% breadcrumb :grandchild_category %>
+<% end %>
+<%= render "shared/breadcrumbs" %>
 <div class="main-contents">
   <%# カテゴリー一覧 %>
   <div class="item-categories">
