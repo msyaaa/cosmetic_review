@@ -50,6 +50,15 @@ crumb :post_new do
   parent :root
 end
 
+crumb :name_search do |search|
+  if search == ""
+    link "クチコミ検索結果", name_search_posts_path
+  else
+    link "「#{search}」のクチコミ検索結果", name_search_posts_path
+  end
+  parent :posts
+end
+
 
 # crumb :projects do
 #   link "Projects", projects_path
