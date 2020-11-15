@@ -1,0 +1,10 @@
+.breadcrumbs {
+  width: 75vw;
+  margin: 0 auto;
+  padding: 10px;
+}
+.breadcrumbs span, .breadcrumbs a {
+  color: black;
+  font-size: 12px;
+  margin-right: 5px;
+}
