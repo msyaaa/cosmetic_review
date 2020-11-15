@@ -11,6 +11,11 @@ crumb :post_show do |post|
   parent :posts
 end
 
+crumb :user do |user| 
+  link user.nickname, user_path(user)
+  parent :root
+end
+
 
 
 # crumb :projects do
