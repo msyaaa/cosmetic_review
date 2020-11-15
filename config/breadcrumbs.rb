@@ -6,6 +6,11 @@ crumb :posts do
   parent :root
 end
 
+crumb :post_show do |post|
+  link post.name, post_path(post)
+  parent :posts
+end
+
 
 
 # crumb :projects do
