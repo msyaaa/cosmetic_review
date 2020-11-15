@@ -160,3 +160,10 @@
   padding: 2vh 5vw;
 }
 /* --画面メイン */
+
+.notice2 {
+  width: 100vw;
+  text-align: center;
+  line-height: 50px;
+  color: blue;
+}
