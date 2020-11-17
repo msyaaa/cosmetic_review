@@ -15,8 +15,7 @@ Cosmetic Reviewは男性用化粧品クチコミアプリケーションです�
 https://cosmetic-review.herokuapp.com/
 
 ### テスト用アカウント
-- ニックネーム: aaa
-- パスワード: aaa111
+ゲストログインボタンがございますので、そちらからお願いします。
 
 ### 利用方法
 - 投稿方法<br>
@@ -125,10 +124,8 @@ https://cosmetic-review.herokuapp.com/
 Ruby/Ruby on Rails/JavaScript/JQuery/MySQL/Github/AWS/Visual Studio Code
 
 # 課題や実装予定の機能
-- パンクズリストの作成
 - クチコミ一覧表示をページ分けする
-- カレンダーの収支記録をクリックしたときにも変更や削除を行えるようにする
- - 画像プレビュー機能を加える
+- 画像プレビュー機能を加える
 - 「評価が高い順」や「投稿が新しい順」など表示方法の選択ができるようにする
 - レスポンシブ機能を加える
 - デザインを整える
