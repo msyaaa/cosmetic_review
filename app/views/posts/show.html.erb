@@ -15,7 +15,7 @@
         <div class='star-btn' id="like_<%= @post.id %>">
           <%= render "likes/like", post: @post %>
         </div>
-        <div class="post-date">
+        <div class="post-date show-sub">
           更新日時：<%= @post.created_at.strftime("%Y.%m.%d") %>
         </div>
       </div>
@@ -26,7 +26,7 @@
       <h2>商品詳細情報</h2>
       <table class="detail-table" >
         <tr>
-          <th>商品名</th>
+          <th class="detail-item">商品名</th>
           <td><%= @post.name %></td>
         </tr>
         <tr>
@@ -95,7 +95,7 @@
               <span><%= post.price %>円(税込み)</span>
             </div>
             <div class="relative-post-evaluation">
-              <span>評価：</span>
+              <%# <span>評価：</span> %>
                 <span id="star-rate-<%= post.id %>"></span>
                 <script>
                   $('#star-rate-<%= post.id %>').raty({
@@ -111,13 +111,13 @@
                 <%= post.evaluation %>
             </div>
             <div class='user-img-content'>
-              <%= image_tag @post.user.image ,class:"mini-img" if @post.user.image.attached? %>
-              <%= link_to @post.user.nickname, user_path(@post.user.id) %>
+              <%= image_tag post.user.image ,class:"mini-img" if post.user.image.attached? %>
+              <%= link_to post.user.nickname, user_path(post.user.id) %>
             </div>
           <%# </div> %>
           <%# <div class="relative-post-info2"> %>
-            <div class="relative-post-date">
-              更新日時：<%= post.created_at.strftime("%Y.%m.%d") %>
+            <div class="relative-post-date show-sub">
+              <%= post.created_at.strftime("%Y.%m.%d") %>
             </div>
           <%# </div> %>
         <%# </div> %>

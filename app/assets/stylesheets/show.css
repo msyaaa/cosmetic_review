@@ -82,6 +82,9 @@
 .detail-table tr {
   border-bottom: 1px solid black;
 }
+.detail-item {
+  color: #999;
+}
 /* --右 */
 .item-explain-box {
   display: flex;
@@ -162,7 +165,7 @@
   display: inline-block;
   /* width: calc((100% - 50px) / 3); */
   width: calc((100% - 60px) / 3);
-  margin: 0 10px;
+  margin: 10px 10px;
   /* text-align: center; */
 }
 .post-list > a {
