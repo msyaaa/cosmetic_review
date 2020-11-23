@@ -1,0 +1,10 @@
+/* プレビュー画像 */
+.img-upload {
+  display: flex;
+  justify-content: space-between;
+}
+#item-img {
+  width: 130px;
+  object-fit: contain;
+}
+/* --プレビュー画像 */

@@ -12,7 +12,7 @@
         </p>
         <%= f.file_field :image, id:"item-image" %>
       </div>
-      <div id="image-list"></div>
+      <div id="image-list"><%= image_tag @post.image, id:"item-img" %></div>
     </div>
     <%# /口コミ商品の画像 %>
     <%# 商品名と商品説明 %>
