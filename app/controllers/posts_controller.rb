@@ -138,7 +138,7 @@ class PostsController < ApplicationController
   end
 
   def index_post
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def set_parents

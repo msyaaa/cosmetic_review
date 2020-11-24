@@ -5,3 +5,26 @@
   /* height: 15vh; */
   object-fit: cover;
 }
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination > li > a {
+  border: none;
+  color: #999;
+}
+.pagination > li > a:hover {
+  color: turquoise;
+  background-color: white;
+}
+.pagination > .active > a {
+  color: turquoise;
+  background-color: white;
+}
+.pagination > .active > a:hover {
+  background-color: white;
+  color: turquoise;
+}
+/* --ページネーション */
