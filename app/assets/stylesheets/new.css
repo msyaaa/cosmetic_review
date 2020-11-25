@@ -21,7 +21,7 @@
   font-weight: bold;
 }
 
-.reviews-post-main input, .reviews-post-main textarea, .select-box {
+.reviews-post-main input, .reviews-post-main textarea, .select-box, select {
   outline: none;
   padding: 10px 15px;
   font-size: 15px;
