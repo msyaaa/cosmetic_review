@@ -123,7 +123,7 @@ class PostsController < ApplicationController
   end
 
   def name_search
-    @posts = Post.search(params[:keyword]).order(created_at: :desc)
+    @posts = Post.search(params[:keyword]).order(created_at: :desc).page(params[:page]).per(10)
     @keyword = params[:keyword]
   end
 
