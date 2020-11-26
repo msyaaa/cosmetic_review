@@ -176,3 +176,40 @@
   line-height: 50px;
   color: blue;
 }
+
+/* タブレット表示時 */
+@media (max-width: 959px) {
+  /* 画面上部 */
+  .service-title {
+    top: 10%;
+    left: 10%;
+  }
+
+  .service-paragraph {
+    top: 60%;
+    left: 5%;
+  }
+  /* --画面上部 */
+
+  /* 画面メイン */
+  .main-contents {
+    padding: 3vh 0;
+    width: 92vw;
+    margin: 0 auto;
+  }
+
+  .item-contents{
+    width: 100%;
+  }
+
+  .item-categories {
+    display: none;
+  }
+
+  .post-index-btn{
+    width: 90%;
+    padding: 1.5vh 5vw;
+  }
+  /* --画面メイン */
+}
+/* --タブレット表示時 */
