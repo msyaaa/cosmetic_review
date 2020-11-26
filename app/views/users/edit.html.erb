@@ -10,10 +10,13 @@
   </div>
   <%= render 'shared/error-messages', model: f.object %>
   <div class="field top-field">
-    <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"ニックネーム" %>
+    <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"ニックネーム（必須）" %>
   </div>
 
   <div class="field">
+    <div class='form-text-wrap'>
+      <label class="form-text">性別（必須）</label>
+    </div>
     <%= f.label :男性 %>
     <%= f.radio_button :gender, :男性 %>
     <%= f.label :女性 %>
@@ -23,12 +26,12 @@
   </div>
 
   <div class="field">
-    <%= f.email_field :email, autocomplete: "email", placeholder:"メールアドレス" %>
+    <%= f.email_field :email, autocomplete: "email", placeholder:"メールアドレス（必須）" %>
   </div>
 
   <div class="field">
     <div class='form-text-wrap'>
-      <label class="form-text">生年月日</label>
+      <label class="form-text">生年月日（必須）</label>
     </div>
     <div class='input-birth-wrap'>
       <%= f.date_field :birthday, id:"birthday" %>
@@ -36,7 +39,7 @@
   </div>
 
   <div class="field">
-    <p>
+    <p class="form-text">
       プロフィール画像（任意）
     </p>
     <%= f.file_field :image, id:"profile-image" %>

@@ -44,6 +44,10 @@ input[type="radio"], #profile-image {
   margin-bottom: 5px;
 }
 
+.form-text {
+  font-weight: bold;
+}
+
 .input-default {
   resize: none;
 }

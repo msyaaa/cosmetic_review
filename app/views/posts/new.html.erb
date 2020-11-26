@@ -10,7 +10,7 @@
     <div class="field img-upload top-field">
       <div class="click-upload">
         <p class="weight-bold-text">
-          画像を追加
+          画像を追加（必須）
         </p>
         <%= f.file_field :image, id:"item-image" %>
       </div>
@@ -20,13 +20,13 @@
     <%# 商品名と商品説明 %>
     <div class="field new-items">
       <div class="weight-bold-text">
-        商品名
+        商品名（必須）
       </div>
       <%= f.text_area :name, class:"items-text input-default", id:"item-name", placeholder:"（必須 50文字まで）", maxlength:"50" %>
     </div>
     <div class="field items-explain">
       <div class="weight-bold-text">
-        レビュー
+        レビュー（必須）
       </div>
       <%= f.text_area :description, class:"items-text input-default", id:"item-info", placeholder:"（必須 1,000文字まで  つけ心地、効能・効果、コスパ、オススメの使い方など）" ,rows:"7" ,maxlength:"1000" %>
     </div>
@@ -51,7 +51,7 @@
           <div class="category">
             <div class="form__label">
               <div class="weight-bold-text lavel__name ">
-                カテゴリー
+                カテゴリー（必須）
               </div>
               <div class="lavel__Required">
                 <%= f.collection_select :category_id, @parents, :id, :name,{ include_blank: "選択してください"},class:"serect_field", id:"item_category_id" %>
@@ -62,7 +62,7 @@
       </div>
       <div class="field">
         <div class="weight-bold-text">
-          商品の評価
+          商品の評価（必須）
         </div>
         <div class="field" id="star">
           <%= f.label :evaluation, "星評価：" %>
@@ -81,16 +81,16 @@
       </div>
 
     <div class="field buy-shop">
-      <div class="weight-bold-text">購入店</div>
+      <div class="weight-bold-text">購入店（任意）</div>
       <div>
-        <%= f.text_field :shop_name, class:"shop-name-input", placeholder:"（必須 50文字まで）" %>
+        <%= f.text_field :shop_name, class:"shop-name-input", placeholder:"（任意 50文字まで）" %>
       </div>
     </div>
 
     <%# 購入価格 %>
     <div class="field buy-price">
       <div class="weight-bold-text question-text">
-        <span>購入価格<br>(¥0〜9,999,999)</span>
+        <span>購入価格（必須）<br>(¥0〜9,999,999)</span>
       </div>
       <div class="price-content">
         <div class="price-text">
