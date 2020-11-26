@@ -81,3 +81,43 @@
   margin-right: 5%;
 }
 /* --投稿ボタン */
+
+/* タブレット表示時 */
+@media (max-width: 959px) {
+  .top-page-header {
+    padding: 1vh 1vw;
+  }
+
+  /* アイコン */
+  .fa-chess-king {
+    font-size: 45px;
+  }
+  /* /アイコン */
+  
+  /* ユーザー登録 */
+  .nav {
+    width: 40%;
+  }
+  .lists-right {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .user-nickname, .login {
+    margin-right: 0px;
+  }
+  .lists-right > li {
+    width: calc( 100% / 3 );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* --ユーザー登録 */
+  
+  /* 投稿ボタン */
+  .post-btn > a {
+    width:100%;
+  }
+  /* --投稿ボタン */
+}
+/* --タブレット表示時 */
