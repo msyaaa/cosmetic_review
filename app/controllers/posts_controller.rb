@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :index_post, only: [:top, :index, :show]
+  before_action :index_post, only: [:top, :index]
   before_action :set_parents
   # before_action :set_category
   def top
@@ -62,6 +62,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @posts = Post.order(created_at: :desc)
   end
 
   def edit
