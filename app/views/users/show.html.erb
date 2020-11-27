@@ -54,7 +54,7 @@
         <li class='post-list'>
           <%= link_to post_path(post.id) do %>
           <div class='post-img-content'>
-            <%= image_tag post.image, class: "post-img" %>
+            <%= image_tag post.image, class: "post-img", id: "relative-img" %>
           </div>
             <div class='relative-post-name'>
               商品名：<%= post.name %>
@@ -96,7 +96,7 @@
         <li class='post-list'>
           <%= link_to post_path(like.id) do %>
           <div class='post-img-content'>
-            <%= image_tag like.image, class: "post-img" %>
+            <%= image_tag like.image, class: "post-img", id: "relative-img" %>
           </div>
           <div class='relative-post-name'>
             商品名：<%= like.name %>

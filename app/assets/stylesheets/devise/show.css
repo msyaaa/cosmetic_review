@@ -116,3 +116,16 @@ input[name="tab_item"] {
   display: block;
 }
 /* --マイページ下部切り替え */
+
+/* タブレット表示時 */
+@media (max-width: 959px) {
+  .user-show-box {
+    width: 90vw;
+  }
+  /* マイページ下部切り替え */
+  .switch-contents {
+    width: 90vw;
+  }
+  /* --マイページ下部切り替え */
+}
+/* --タブレット表示時 */
