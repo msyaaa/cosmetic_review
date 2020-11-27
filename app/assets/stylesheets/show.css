@@ -175,3 +175,37 @@
   padding: 3px;
 }
 /* --関連商品のクチコミ */
+
+@media (max-width: 959px) {
+  /* 詳細画面上部 */
+  .post-box {
+    width: 90vw;
+  }
+  /* お気に入りボタン */
+  .post-date {
+    text-align: center;
+  }
+  .star-btn {
+    margin: 0 5px;
+  }
+  /* --お気に入りボタン */
+  .item-explain-box {
+    width: 90vw;
+  }
+  /* 編集・削除ボタン */
+  .edit-btn-contents {
+    width: 90vw;
+  }
+  /* --編集・削除ボタン */
+  /* --詳細画面上部 */
+
+  /* 関連商品のクチコミ */
+  .relative-item-post {
+    width: 90vw;
+  }
+  #relative-img {
+    width: 100%;
+    object-fit: cover;
+  }
+  /* --関連商品のクチコミ */
+}
