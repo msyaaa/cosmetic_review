@@ -75,3 +75,11 @@ input[type="radio"], #profile-image {
   color: red;
 }
 /* --エラーメッセージ */
+
+/* スマホ表示時 */
+@media (max-width: 559px) {
+  #sumaho-login-header {
+    display: block;
+  }
+}
+/* --スマホ表示時 */
