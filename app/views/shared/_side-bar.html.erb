@@ -1,0 +1,25 @@
+<div class="side-bar">
+  <label for="menu" class="close">✖︎</label>
+  <%# ユーザー登録 %>
+  <div class='nav'>
+    <ul class='lists-right'>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+        <li><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %></li>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+  <%# /ユーザー登録 %>
+  <div class="item-categories-side">
+    <h2>
+      カテゴリー一覧
+    </h2>
+    <%= link_to  posts_path, class: "category-button", id: 'categoBtn' do %>
+      カテゴリーから探す
+    <% end %>
+  </div>
+</div>
