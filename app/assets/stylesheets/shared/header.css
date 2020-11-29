@@ -5,6 +5,14 @@
   justify-content: space-between;
   background-color: turquoise;
 }
+/* スマホ表示時ヘッダー非表示 */
+.sumaho-header {
+  display: none;
+}
+.open, .close {
+  display: none;
+}
+/* --スマホ表示時ヘッダー非表示 */
 /* アイコン */
 .fa-chess-king {
   font-size: 50px;
@@ -121,3 +129,30 @@
   /* --投稿ボタン */
 }
 /* --タブレット表示時 */
+
+/* スマホ表示時 */
+@media (max-width: 559px) {
+  /* 元のヘッダー非表示 */
+  .top-page-header {
+    display: none;
+  }
+  /* --元のヘッダー非表示 */
+  .sumaho-header {
+    display: flex;
+  }
+
+  .open, .close {
+    display: flex;
+    align-items: center;
+  }
+  .fa-bars {
+    font-size: 25px;
+  }
+  .fa-chess-king {
+    font-size: 35px;
+  }
+  .post-btn {
+    width: 80px;
+  }
+}
+/* --スマホ表示時 */

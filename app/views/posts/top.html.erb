@@ -1,7 +1,12 @@
 <%= render "shared/header" %>
+<%= render "shared/sumaho-header" %>
 <div class="notice2">
   <%= flash[:notice2] %>
 </div>
+<div id="main">
+<input id="menu" type="checkbox">
+<label for="menu" class="back"></label>
+<%= render "shared/side-bar" %>
 <div class='main'>
 
   <div class='title-contents'>
@@ -80,5 +85,6 @@
     </div>
   </div>
   <%# 最新の投稿3件 %>
+</div>
 </div>
 <%= render "shared/footer" %>

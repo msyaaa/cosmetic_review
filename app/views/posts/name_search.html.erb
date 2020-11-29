@@ -1,6 +1,12 @@
 <%= render "shared/header" %>
+<%= render "shared/sumaho-header" %>
+<div id="main">
+<input id="menu" type="checkbox">
+<label for="menu" class="back"></label>
+<%= render "shared/side-bar" %>
 <% breadcrumb :name_search, @keyword %>
 <%= render "shared/breadcrumbs" %>
+</div>
 <div class="main-contents">
   <%# カテゴリー一覧 %>
   <%= render "shared/category-search" %>

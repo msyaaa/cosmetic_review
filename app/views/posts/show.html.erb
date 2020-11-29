@@ -1,6 +1,12 @@
 <%= render "shared/header" %>
+<%= render "shared/sumaho-header" %>
+<div id="main">
+<input id="menu" type="checkbox">
+<label for="menu" class="back"></label>
+<%= render "shared/side-bar" %>
 <% breadcrumb :post_show, @post %>
 <%= render "shared/breadcrumbs" %>
+</div>
 <div class="post-show">
   <div class="post-box">
     <div class="post-item-img">

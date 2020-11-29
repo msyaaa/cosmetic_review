@@ -177,6 +177,16 @@
   color: blue;
 }
 
+/* サイドバー非表示 */
+.side-bar {
+  display: none;
+}
+input[type="checkbox"] {
+  position: absolute;
+  left: -10vw;
+}
+/* --サイドバー非表示 */
+
 /* タブレット表示時 */
 @media (max-width: 959px) {
   /* 画面上部 */
@@ -213,3 +223,44 @@
   /* --画面メイン */
 }
 /* --タブレット表示時 */
+
+/* スマホ表示時 */
+@media (max-width: 559px) {
+  body {
+    font-size: 12px;
+  }
+  #main {
+    display: flex;
+  }
+
+  /* サイドバー表示 */
+  .side-bar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    min-width: 300px;
+    left: -300px;
+    transition: all 0.2s;
+    background-color: white;
+  }
+  .nav {
+    width: 100%;
+  }
+  .lists-right {
+    flex-direction: column;
+  }
+  
+  input[type="checkbox"]:checked ~ .side-bar {
+    left: 0;
+  }
+  input[type="checkbox"]:checked ~ .back {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  /* --サイドバー表示 */
+}
+/* --スマホ表示時 */

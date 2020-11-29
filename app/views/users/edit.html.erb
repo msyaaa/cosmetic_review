@@ -1,5 +1,10 @@
 <%= render "shared/header" %>
-
+<%= render "shared/sumaho-header" %>
+<div id="main">
+<input id="menu" type="checkbox">
+<label for="menu" class="back"></label>
+<%= render "shared/side-bar" %>
+</div>
 <%= form_with model: current_user, local: true do |f| %>
 
 <div class="form-wrap">
