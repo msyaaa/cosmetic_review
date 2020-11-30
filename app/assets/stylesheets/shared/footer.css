@@ -9,3 +9,11 @@
 .footer-box span {
   font-size: 12px;
 }
+
+/* スマホ表示時 */
+@media (max-width: 559px) {
+  .footer-box span {
+    font-size: 8px;
+  }
+}
+/* --スマホ表示時 */
