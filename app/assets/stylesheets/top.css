@@ -262,5 +262,90 @@ input[type="checkbox"] {
     background-color: rgba(0, 0, 0, 0.5);
   }
   /* --サイドバー表示 */
+  /* 画面上部 */
+  .title-contents {
+    height: 200px;
+    background-size: 70%;
+  }
+
+  .service-title {
+    font-size: 20px;
+    line-height: 30px;
+    top: 15%;
+    left: 10%;
+  }
+
+  .service-paragraph {
+    top: 70%;
+    left: 10%;
+    height: 0px;
+    font-size: 8px;
+  }
+   
+  .service-explain1 {
+    margin-right: 20px;
+  }
+  
+  .service-explain1::after {
+    width: 100px;
+    top: -50px;
+  }
+  .service-explain1:before {
+    width: 100px;
+    top: -50px;
+  }
+  .service-explain2::after {
+    width: 100px;
+    top: -50px;
+    left: 145px;
+  }
+  .service-explain2:before {
+    width: 100px;
+    top: -50px;
+    left: 145px;
+  }
+  /* --画面上部 */
+  /* 画面メイン */
+  .item-contents > h2 {
+    font-size: 14px;
+    border-top: 1px solid turquoise;
+    border-bottom: 1px solid turquoise;
+  }
+  .main-contents {
+    width: 100vw;
+  }
+
+  .post-link {
+    display: flex;
+  }
+
+  .post-info-contents {
+    display: flex;
+    width: 100%;
+    margin-left: 1%;
+    font-size: 10px;
+  }
+
+  .post-info1 {
+    width: calc(100% - 60px) ;
+  }
+  .post-info2 {
+    width: 60px;
+  }
+
+  .post-index-box {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .post-index-btn{
+    width: 100%;
+    padding: 2vh 5vw;
+  }
+
+  .show-sub {
+    font-size: 10px;
+  }
+  /* --画面メイン */
 }
 /* --スマホ表示時 */

@@ -28,3 +28,12 @@
   color: turquoise;
 }
 /* --ページネーション */
+
+/* スマホ表示時 */
+@media (max-width: 559px) {
+  .post-img {
+    width: 130px;
+    height: 90px;
+  }
+}
+/* --スマホ表示時 */
