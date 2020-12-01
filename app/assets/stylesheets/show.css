@@ -205,3 +205,38 @@
   }
   /* --関連商品のクチコミ */
 }
+
+/* スマホ表示時 */
+@media (max-width: 559px) {
+  /* 左 */
+  .item-box-img {
+    width: 150px;
+    height: 150px;
+  }
+  /* --左 */
+  /* 右 */
+  .post-detail > h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 30px;
+  }
+  .post-detail {
+    width: calc(100% - 20vw);
+  }
+  /* --右 */
+  .item-explain-box {
+    padding: 2vh;
+  }
+  /* --関連商品のクチコミ */
+  .relative-item-post > h2{
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 30px;
+  }
+  #relative-img {
+    width: 90px;
+    height: 60px;
+  }
+  /* --関連商品のクチコミ */
+}
+/* --スマホ表示時 */
