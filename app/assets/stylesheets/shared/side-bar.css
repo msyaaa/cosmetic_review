@@ -1,0 +1,14 @@
+.close {
+  padding: 5px 0 5px 10px ;
+}
+.side-lists > li {
+  padding-left: 30px;
+  line-height: 40px;
+}
+.side-lists > li > a {
+  color: black;
+}
+.item-categories-side {
+  padding-left: 30px;
+  line-height: 40px;
+}
