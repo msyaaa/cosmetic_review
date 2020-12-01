@@ -129,3 +129,29 @@ input[name="tab_item"] {
   /* --マイページ下部切り替え */
 }
 /* --タブレット表示時 */
+
+/* スマホ表示時 */
+@media (max-width: 559px) {
+  /* 編集ボタン */
+  .profile-edit-box a {
+    padding: 5px;
+    font-size: 10px;
+  }
+  /* --編集ボタン */
+  
+  .user-img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .nickname {
+    font-size: 18px;
+  }
+  
+  /* マイページ下部切り替え */
+  .tab_item {
+    padding: 20px;
+  }
+  /* --マイページ下部切り替え */
+}
+/* --スマホ表示時 */
