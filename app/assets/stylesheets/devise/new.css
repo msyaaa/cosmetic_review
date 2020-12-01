@@ -81,5 +81,32 @@ input[type="radio"], #profile-image {
   #sumaho-login-header {
     display: block;
   }
+
+  .form-wrap {
+    width: 90vw;
+  }
+  
+  /* フォームタイトル */
+  .form-header-text {
+    font-size: 16px;
+  }
+  /* --フォームタイトル */
+  
+  .form-wrap input, .form-wrap textarea {
+    padding: 8px 8px;
+    font-size: 12px;
+  }
+  
+  .field {
+    padding: 0 0 15px 0;
+    width: 100%;
+  }
+
+  /* 登録ボタン */
+  .actions {
+    width: 100%;
+    padding: 0 0 15px 0;
+  }
+  /* --登録ボタン */
 }
 /* --スマホ表示時 */
