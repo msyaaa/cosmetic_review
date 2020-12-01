@@ -8,3 +8,11 @@
   font-size: 12px;
   margin-right: 5px;
 }
+
+/* スマホ表示時 */
+@media (max-width:559px) {
+  .breadcrumbs span, .breadcrumbs a {
+    font-size: 8px;
+  }
+}
+/* --スマホ表示時 */
