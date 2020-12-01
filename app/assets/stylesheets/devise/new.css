@@ -76,9 +76,15 @@ input[type="radio"], #profile-image {
 }
 /* --エラーメッセージ */
 
+/* ヘッダー */
+span > #sumaho-login-header {
+  display: none;
+}
+/* --ヘッダー */
+
 /* スマホ表示時 */
 @media (max-width: 559px) {
-  #sumaho-login-header {
+  span > #sumaho-login-header {
     display: block;
   }
 
