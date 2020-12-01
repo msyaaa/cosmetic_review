@@ -52,3 +52,24 @@
 .back-btn a:hover {
   border-bottom: 1px solid black;
 }
+
+/* スマホ表示時 */
+@media (max-width: 559px) {
+  .reviews-post-main {
+    width: 90vw;
+  }
+  
+  .reviews-post-title {
+    font-size: 16px;
+  }
+  
+  .reviews-post-main input, .reviews-post-main textarea, .select-box, select {
+    padding: 8px 8px;
+    font-size: 12px;
+  }
+  
+  .back-btn {
+    width: 100%;
+  }
+}
+/* --スマホ表示時 */
