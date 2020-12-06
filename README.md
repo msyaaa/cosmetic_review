@@ -124,8 +124,6 @@ https://cosmetic-review.herokuapp.com/
 Ruby/Ruby on Rails/JavaScript/JQuery/MySQL/Github/AWS/Visual Studio Code
 
 # 課題や実装予定の機能
-- クチコミ一覧表示をページ分けする
-- 画像プレビュー機能を加える
 - 「評価が高い順」や「投稿が新しい順」など表示方法の選択ができるようにする
 - レスポンシブ機能を加える
 - デザインを整える
