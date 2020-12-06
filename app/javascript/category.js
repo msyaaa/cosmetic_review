@@ -55,12 +55,13 @@
 
 $(document).ready(function () {
   // 親カテゴリーを表示
-  $('#categoBtn').hover(function (e) {
+  $(document).on('mouseover', '#categoBtn', function (e) {
+  // $('#categoBtn').hover(function (e) {
     e.preventDefault();
     e.stopPropagation();
     $('#tree_menu').show();
     $('.categoryTree').show();
-  }, function () {
+  // }, function () {
     // あえて何も記述しない
   });
 
@@ -86,16 +87,16 @@ $(document).ready(function () {
   }
 
   // 親カテゴリーを表示
-  $('#categoBtn').hover(function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    timeOut = setTimeout(function () {
-      $('#tree_menu').show();
-      $('.categoryTree').show();
-    }, 500)
-  }, function () {
-    clearTimeout(timeOut)
-  });
+  // $('#categoBtn').hover(function (e) {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   timeOut = setTimeout(function () {
+  //     $('#tree_menu').show();
+  //     $('.categoryTree').show();
+  //   }, 500)
+  // }, function () {
+  //   clearTimeout(timeOut)
+  // });
 
   // 子カテゴリーを表示
   $('.parent_btn').hover(function () {
